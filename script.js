@@ -2,7 +2,18 @@ console.log("Hello World!");
 
 function getComputerChoice() {
   const randomChoice = Math.floor(Math.random() * 3) + 1;
-  return randomChoice;
+  return showChoiceAsString(randomChoice);
+}
+
+function showChoiceAsString(choice) {
+  switch(choice) {
+    case 1:
+      return "rock";
+    case 2:
+      return "paper";
+    case 3:
+      return "scissor";
+  }
 }
 
 function getHumanChoice() {
