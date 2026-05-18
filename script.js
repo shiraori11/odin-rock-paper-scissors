@@ -66,36 +66,42 @@ function playGame() {
   // Play five rounds of Rock, Paper, Scissors
   if (roundOne == "player") {
     humanScore += 1;
-  } else {
+  } else if (roundOne == "computer") {
     computerScore += 1;
   }
   if (roundTwo == "player") {
     humanScore += 1;
-  } else {
+  } else if (roundTwo == "computer"){
     computerScore += 1;
   }
   if (roundThree == "player") {
     humanScore += 1;
-  } else {
+  } else if (roundThree == "computer"){
     computerScore += 1;
   }
   if (roundFour == "player") {
     humanScore += 1;
-  } else {
+  } else if (roundFour == "computer") {
     computerScore += 1;
   }
   if (roundFive == "player") {
     humanScore += 1;
-  } else {
+  } else if (roundFive == "computer") {
     computerScore += 1;
   }
 
   // Tell the player who wins
   if (humanScore == computerScore) {
+    console.log(`Player win: ${humanScore}`);
+    console.log(`Computer win: ${computerScore}`);
     console.log("It's a Tie! No one wins or lose!");
-  } else if (humanScore < computerScore) {
+  } else if (humanScore > computerScore) {
+    console.log(`Player win: ${humanScore}`);
+    console.log(`Computer win: ${computerScore}`);
     console.log("Player wins!");
   } else {
+    console.log(`Player win: ${humanScore}`);
+    console.log(`Computer win: ${computerScore}`);
     console.log("Computer wins!");
   }
 }
