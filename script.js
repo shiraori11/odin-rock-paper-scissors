@@ -24,12 +24,15 @@ function getHumanChoice() {
   return humanInput;
 }
 
-function playRound(player, computer) {
+function playRound() {
+  const player = getHumanChoice();
+  const computer = getComputerChoice();
+
   let playerToLower = player.toString().toLowerCase();
 
   if (playerToLower === computer) {
     console.log("Tie!");
-    return "player";
+    return;
   } else if (playerToLower === "rock" && computer === "scissor") {
     console.log("You Win! Rock beats Scissor!");
     return "player";
@@ -50,15 +53,15 @@ function capitalize(text) {
   return convertTextToString.charAt(0).toUpperCase() + convertTextToString.slice(1);
 }
 
-function playGame(player, computer) {
+function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   
-  const roundOne = playRound(player, computer);
-  const roundTwo = playRound(player, computer);
-  const roundThree = playRound(player, computer);
-  const roundFour = playRound(player, computer);
-  const roundFive = playRound(player, computer);
+  const roundOne = playRound();
+  const roundTwo = playRound();
+  const roundThree = playRound();
+  const roundFour = playRound();
+  const roundFive = playRound();
 
   // Play five rounds of Rock, Paper, Scissors
   if (roundOne == "player") {
@@ -90,4 +93,4 @@ function playGame(player, computer) {
   // Tell the player who wins
 }
 
-playGame(getHumanChoice(), getComputerChoice());
+playGame();
