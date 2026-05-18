@@ -29,19 +29,19 @@ function playRound(player, computer) {
 
   if (playerToLower === computer) {
     console.log("Tie!");
-    return;
+    return "player";
   } else if (playerToLower === "rock" && computer === "scissor") {
     console.log("You Win! Rock beats Scissor!");
-    return;
+    return "player";
   } else if (playerToLower === "paper" && computer === "rock") {
     console.log("You Win! Paper beats Rock!");
-    return;
+    return "player";
   } else if (playerToLower === "scissor" && computer === "paper") {
     console.log("You Win! Scissor beats Paper!");
-    return;
+    return "player";
   } else {
     console.log(`You Loss! ${capitalize(computer)} beats ${capitalize(playerToLower)}`);
-    return;
+    return "computer";
   }
 }
 
@@ -50,4 +50,44 @@ function capitalize(text) {
   return convertTextToString.charAt(0).toUpperCase() + convertTextToString.slice(1);
 }
 
-playRound(getHumanChoice(), getComputerChoice());
+function playGame(player, computer) {
+  let humanScore = 0;
+  let computerScore = 0;
+  
+  const roundOne = playRound(player, computer);
+  const roundTwo = playRound(player, computer);
+  const roundThree = playRound(player, computer);
+  const roundFour = playRound(player, computer);
+  const roundFive = playRound(player, computer);
+
+  // Play five rounds of Rock, Paper, Scissors
+  if (roundOne == "player") {
+    humanScore += 1;
+  } else {
+    computerScore += 1;
+  }
+  if (roundTwo == "player") {
+    humanScore += 1;
+  } else {
+    computerScore += 1;
+  }
+  if (roundThree == "player") {
+    humanScore += 1;
+  } else {
+    computerScore += 1;
+  }
+  if (roundFour == "player") {
+    humanScore += 1;
+  } else {
+    computerScore += 1;
+  }
+  if (roundFive == "player") {
+    humanScore += 1;
+  } else {
+    computerScore += 1;
+  }
+
+  // Tell the player who wins
+}
+
+playGame(getHumanChoice(), getComputerChoice());
