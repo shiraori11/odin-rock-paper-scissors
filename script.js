@@ -91,6 +91,13 @@ function playGame() {
   }
 
   // Tell the player who wins
+  if (humanScore == computerScore) {
+    console.log("It's a Tie! No one wins or lose!");
+  } else if (humanScore < computerScore) {
+    console.log("Player wins!");
+  } else {
+    console.log("Computer wins!");
+  }
 }
 
 playGame();
