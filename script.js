@@ -17,10 +17,6 @@ const showComputerChoiceAsString = function(choice) {
   }
 }
 
-const getPlayerChoice = function() {
-   playGame(playerChoice, computerChoice);
-}
-
 const checkWhoScore = function(player, computer) {
   if (player === computer){
     return "tie";
@@ -34,23 +30,36 @@ const checkWhoScore = function(player, computer) {
     return "computer";
   }
 }
-
-const playGame = function(playerChoice, computerChoice) {
-  const whoScored = checkWhoScore(playerChoice, computerChoice)
-  switch(whoScored) {
-    case "player":
-      break;
-    case "computer":
-      break;
-    case "tie":
-      break;
-  }
-}
+//
+// const playRound = function(playerChoice, computerChoice) {
+//   const whoScored = checkWhoScore(playerChoice, computerChoice)
+//   switch(whoScored) {
+//     case "player":
+//       break;
+//     case "computer":
+//       break;
+//     case "tie":
+//       break;
+//   }
+// }
 
 const playerChoiceButtons = document.querySelectorAll(".playerChoiceContainer button");
+const computerChoicePara = document.querySelector("#computerChoice");
+const playerCurrentScore = document.querySelector("#playerScore");
+const computerCurrentScore = document.querySelector("#computerScore");
+const tieCurrentScore = document.querySelector("#tieScore");
 
 playerChoiceButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    alert(button.id);
+    const playerChoice = button.id;
+    const computerChoice = getComputerChoice();
+    
+    computerChoicePara.textContent = computerChoice;
+    
+    const getRoundWinner = checkWhoScore(playerChoice, computerChoice);
+    
+    if (getRoundWinner === "player") {
+      playerCurrentScore.textContent += 1;
+    }
   });
 });
