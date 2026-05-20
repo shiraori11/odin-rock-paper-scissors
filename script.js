@@ -1,11 +1,9 @@
-console.log("Hello World!");
-
-function getComputerChoice() {
+const getComputerChoice = function () {
   const randomChoice = Math.floor(Math.random() * 3) + 1;
   return showComputerChoiceAsString(randomChoice);
 }
 
-function showComputerChoiceAsString(choice) {
+const showComputerChoiceAsString = function(choice) {
   switch(choice) {
     case 1:
       return "rock";
@@ -19,19 +17,11 @@ function showComputerChoiceAsString(choice) {
   }
 }
 
-function getPlayerChoice(playerChoice, computerChoice) {
-  const whoScored = checkWhoScore(playerChoice, computerChoice)
-  switch(whoScored) {
-    case "player":
-      break;
-    case "computer":
-      break;
-    case "tie":
-      break;
-  }
+const getPlayerChoice = function() {
+   playGame(playerChoice, computerChoice);
 }
 
-function checkWhoScore(player, computer) {
+const checkWhoScore = function(player, computer) {
   if (player === computer){
     return "tie";
   } else if (player === "rock" && computer === "scissor") {
@@ -44,3 +34,23 @@ function checkWhoScore(player, computer) {
     return "computer";
   }
 }
+
+const playGame = function(playerChoice, computerChoice) {
+  const whoScored = checkWhoScore(playerChoice, computerChoice)
+  switch(whoScored) {
+    case "player":
+      break;
+    case "computer":
+      break;
+    case "tie":
+      break;
+  }
+}
+
+const playerChoiceButtons = document.querySelectorAll(".playerChoiceContainer button");
+
+playerChoiceButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    alert(button.id);
+  });
+});
