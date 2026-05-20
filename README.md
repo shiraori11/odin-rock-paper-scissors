@@ -21,3 +21,6 @@ This is why writing down the program logic in plain english, even as a comment i
 - Debugging Skills
 - CSS Flexbox
 - Git branching
+
+#### Reflection:
+05-20-26: Currently struggling with using functions to separate logic of the RPS game. I need more experience to know what part should I make a function and not. It's also because I am trying to make it "clean" from the start instead of making the program work and then make it clean after.
