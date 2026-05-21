@@ -24,3 +24,5 @@ This is why writing down the program logic in plain english, even as a comment i
 
 #### Reflection:
 05-20-26: Currently struggling with using functions to separate logic of the RPS game. I need more experience to know what part should I make a function and not. It's also because I am trying to make it "clean" from the start instead of making the program work and then make it clean after.
+
+05-21-26: When I checked my code when I woke up in the middle of the night. I noticed that I had a function that checks who scored between computer or player and the result would be given to a function that check who win and do something. I think this is redundant. Since I am using 2 function to check who wins when I can do it with one. So I removed the last function.
